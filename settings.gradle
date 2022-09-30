@@ -1,0 +1,20 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "MyFirstApp"
+include ':app'
+include ':LogLib'
+project(':LogLib').projectDir = new File(rootProject.projectDir, 'Libraries/CommonLog')
+include ':ApiConnectionLib'
+project(':ApiConnectionLib').projectDir = new File(rootProject.projectDir, 'Libraries/ApiConnection')
