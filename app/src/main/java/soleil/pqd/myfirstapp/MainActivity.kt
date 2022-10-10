@@ -20,7 +20,16 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        CMLog("Hello world!")
+        val xyz = 12
+        var abc = listOf<Any>("A", 1, listOf("C", 2))
+        var def = mapOf<Any, Any>("A" to 1, 2 to "B", "c" to mapOf<Any, Any>("E" to 1.5))
+        CMLog(
+            "Hello world!".getDebugDescription(limit = 0),
+            this.applicationInfo.getDebugDescription(limit = 0),
+            xyz.getDebugDescription(identifier = "xyz", limit = 0),
+            abc.getDebugDescription(limit = 0),
+            def.getDebugDescription(limit = 0)
+        )
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
